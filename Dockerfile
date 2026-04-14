@@ -1,5 +1,5 @@
-# Use an official Go image
-FROM golang:1.23-alpine
+# Use the fully qualified path for Podman compatibility
+FROM docker.io/library/golang:1.23-alpine
 
 # Set the working directory inside the container
 WORKDIR /app
