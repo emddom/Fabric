@@ -1,0 +1,18 @@
+{
+    "name": "Fabric AI Workspace",
+    "build": {
+        "dockerfile": "../Dockerfile"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "golang.go"
+            ]
+        }
+    },
+    "mounts": [
+        "source=${localEnv:HOME}/.config/fabric,target=/root/.config/fabric,type=bind"
+    ],
+    "postCreateCommand": "fabric --setup",
+    "remoteUser": "root"
+}
