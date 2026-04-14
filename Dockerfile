@@ -1,5 +1,6 @@
 # Use the fully qualified path for Podman compatibility
-FROM docker.io/library/golang:1.23-alpine
+# Fabric v1.4.445 requires Go 1.25.1+
+FROM docker.io/library/golang:1.25.1-alpine
 
 # Set the working directory inside the container
 WORKDIR /app
