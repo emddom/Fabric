@@ -1,12 +1,16 @@
 # myFabric: System & User Documentation
 
 ## Table of Contents
-1. [Part 1: System & Functional Description](#part-1-system--functional-description)
+- [myFabric: System \& User Documentation](#myfabric-system--user-documentation)
+  - [Table of Contents](#table-of-contents)
+  - [Part 1: System \& Functional Description](#part-1-system--functional-description)
     - [System Overview](#system-overview)
-    - [Architecture & Components](#architecture--components)
-    - [Data Flow & Storage](#data-flow--storage)
-2. [Part 2: User Manual](#part-2-user-manual)
+    - [Architecture \& Components](#architecture--components)
+    - [Data Flow \& Storage](#data-flow--storage)
+  - [Part 2: User Manual](#part-2-user-manual)
     - [Getting Started](#getting-started)
+      - [Prerequisites](#prerequisites)
+      - [Initialization](#initialization)
     - [Using Fabric](#using-fabric)
     - [YouTube Video Analysis](#youtube-video-analysis)
     - [Managing Patterns](#managing-patterns)
@@ -68,6 +72,12 @@ cat article.txt | fabric --pattern summarize
 **Save output to a file:**
 ```bash
 cat article.txt | fabric --pattern extract_wisdom -o my_analysis.md
+```
+
+**Use clipboard as input and also translate output**
+    There is a catch! In many CLI tools, spaces around the = character cause the shell to split the argument into separate pieces, but this specific Fabric implementation clearly requires that exact spacing to parse the variable assignment correctly. Therefore space characters are put around the '=' sign
+```bash
+xclip -selection clipboard -o | fabric --pattern analyze_personality | fabric --pattern translate -v lang_code = Hungarian > proba1.md
 ```
 
 ### YouTube Video Analysis
