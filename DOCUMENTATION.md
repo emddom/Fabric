@@ -75,6 +75,7 @@ cat article.txt | fabric --pattern extract_wisdom -o my_analysis.md
 ```
 
 **Use clipboard as input and also translate output**
+
     There is a catch! In many CLI tools, spaces around the = character cause the shell to split the argument into separate pieces, but this specific Fabric implementation clearly requires that exact spacing to parse the variable assignment correctly. Therefore space characters are put around the '=' sign
 ```bash
 xclip -selection clipboard -o | fabric --pattern analyze_personality | fabric --pattern translate -v lang_code = Hungarian > proba1.md
